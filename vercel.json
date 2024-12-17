@@ -4,11 +4,7 @@
     "src": "package.json",
     "use": "@vercel/next"
   }],
-  "routes": [{
-    "src": "/(.*)",
-    "dest": "/"
-  }],
   "env": {
     "PORT": "8000"
   }
-} 
+}
