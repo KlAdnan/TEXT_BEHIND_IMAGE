@@ -1,13 +1,15 @@
+# Define build configuration
 [build]
-builder = "nixpacks"
-buildCommand = "npm run build"
+builder = "nixpacks"                # Use nixpacks as the builder
+buildCommand = "npm run build"      # Command to build the application
 
+# Define deployment configuration
 [deploy]
-startCommand = "npm start"
-healthcheckPath = "/"
-healthcheckTimeout = 100
+startCommand = "npm start"          # Command to start the application
+healthcheckPath = "/"              # Path to check if app is healthy
+healthcheckTimeout = 100           # Timeout for health check in seconds
 
-
+# Environment variables
 [env]
-NODE_ENV = "production"
-PORT = "8000" 
+NODE_ENV = "production"            # Set environment to production
+PORT = "8000"                      # Set application port
