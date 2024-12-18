@@ -1,24 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, { isServer }) => {
-    // Add specific webpack rules here
+  // Configure webpack for file handling
+  webpack: (config) => {
     config.module.rules.push({
-      test: /\.(glsl|vs|fs|vert|frag)$/,
-      exclude: /node_modules/,
-      use: ['raw-loader', 'glslify-loader'],
+      test: /\.(pdf|jpg|jpeg|png|gif|ico)$/,  // File types to handle
+      use: [
+        {
+          loader: 'file-loader',               // Use file-loader for these files
+          options: {
+            name: '[path][name].[ext]',        // Keep original file names
+          },
+        },
+      ],
     });
-
-    // Important: return the modified config
     return config;
   },
-  // Enable React strict mode
-  reactStrictMode: true,
-  // Specify domains for next/image
+  reactStrictMode: true,                       // Enable React strict mode
+  swcMinify: true,                            // Enable SWC minification
   images: {
-    domains: ['localhost'],
+    domains: ['localhost'],                    // Allow images from localhost
   },
-  // Handle Three.js imports
-  transpilePackages: ['three'],
 };
 
 module.exports = nextConfig;
