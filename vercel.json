@@ -1,10 +1,11 @@
+
 {
-  "version": 2,
+  "version": 2,                         // Vercel config version
   "builds": [{
-    "src": "package.json",
-    "use": "@vercel/next"
+    "src": "package.json",             // Source file for build
+    "use": "@vercel/next"             // Use Next.js builder
   }],
   "env": {
-    "PORT": "8000"
+    "PORT": "8000"                    // Set application port
   }
 }
