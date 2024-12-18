@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // Define which files to scan for classes
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,20 +8,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Custom color definitions
       colors: {
-        'editor-bg': '#0F172A',
-        'editor-surface': '#1E293B',
-        'primary': '#6366F1',
-        'primary-dark': '#4F46E5',
-        'success': '#22C55E',
-        'warning': '#F59E0B',
-        'danger': '#EF4444',
+        'editor-bg': '#0F172A',          // Editor background color
+        'editor-surface': '#1E293B',     // Editor surface color
+        'primary': '#6366F1',            // Primary theme color
+        'primary-dark': '#4F46E5',       // Darker variant of primary
+        'success': '#22C55E',            // Success state color
+        'warning': '#F59E0B',            // Warning state color
+        'danger': '#EF4444',             // Danger state color
       },
+      // Custom animation definitions
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'float': 'float 3s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
       },
+      // Custom keyframe definitions
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -33,5 +37,5 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [],                           // No additional plugins
 }; 
